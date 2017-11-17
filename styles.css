@@ -1,18 +1,28 @@
-
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 /* Global */
 
 * {
 	margin: 0;
 	border: 0;
 	padding: 0;
+	box-sizing: border-box;
 }
+
 body {
-	font: 15px/1.5 Roboto Slab, serif;
-	padding: 0;
-	margin: 0;
-	background-color: #f4f4f4;
-	text-align: center;
+	background: #F1F6F8;
+	font-family: sans-serif;
+	margin: 0 auto;
 } 
+
+p {
+	font-family: 'Roboto', sans-serif;;
+	font-size: 160%;
+	line-height: 155%;
+	padding: 3%;
+	text-indent: 2%;
+	float: inherit;
+}
+
 
 ul {
 	margin: 0;
@@ -23,34 +33,33 @@ ul {
 
 a {
 	text-decoration: none;
-
+	font-weight: bold;	
 }
 
+
 img {
-	display: inline-block;
+	display: block;
 	max-width: 100%;
 	max-height: 90px;
 	width: auto;
 	height: auto;
 	float: left;
+	margin: 0 auto;
+	margin-bottom: -4px;
 }
 
-p { 
-	float: left;
-	padding-left: 5px;
-	margin-top: 20px;
-	text-align: left;
-	font-size: 90%;
-	padding: 2%;
+#wrapper {
+	max-width: 1200px;
+	max-width: 0 auto;
 }
- 
 
-.profile-image {
-	width: 50%px;
-	float: right;
-	padding: 20px 10px 20px 10px;
-
+header {
+	width: 100%;
+	height: 100px;
+	top: 0;
+	left: 0;
 }
+
 
 
 h2 {
@@ -59,52 +68,68 @@ h2 {
 }
 
 h3 {
-	font-size: 150%;
+	font-size: 100%;
+	font-weight: 500%;
 	padding: 5% 0;
+	line-height: 155%;
+	text-align: center;
+	text-transform: uppercase;
+	padding: 0;
 }
 
 /*Clearfix */
-.clearfix {
+.clearfix-padding {
 	clear: both;
 	padding: 2%;
 }
+/* Card and Flex */
 
+.column,
+.column-2
+  {
+  	flex-direction: column;
+ } 
 /*--Start container--*/
 
-.images {
+.one-third {
+	width: 33.33333333%;
+	text-align: justify;
+	text-align: center;
+	float: right;
+
+}
+
+.one-third-padding {
 	width: 29%;
+	margin: 2% 2%;
 	float: left;
-	margin: 2%;
-
-
+	text-align: center;
+	text-align: justify;
+	display: inline;
 }
 
-.images img {
-	padding-bottom: 2%;
 
-}
-
-.box {
-	width: 150px;
-	height: 150px;
+#left-col {
+	float: left;
 	margin: 0 auto;
-}
-
-
-.container {
-	max-width: 1200px;
-	margin: 0 auto;
-	overflow: hidden;
-}
-.container #introduction {
-	width: 50%;
+	width: 60%;
 	height: auto;
-	float: left;
+	padding: 1%;
 }
+
+section .sidebar {
+	float: left;
+	margin: 0 auto;
+	width: 100%;
+	height: auto;
+	padding: 1%;
+}
+
 
 
 /* Header */
-header {
+header, 
+footer {
 	background: #35424a;
 	color: #ffffff;
 	padding-top: 30px;
@@ -128,7 +153,8 @@ footer nav li {
 	padding: 0 20px 0 20px;
 }
 
-header #name {
+header #name,
+footer {
 	float: left;
 }
 
@@ -157,21 +183,6 @@ footer a:hover {
 }
 
 /* Introduction */
-#introduction { }
-	text-align: left;
-	min-height: 400px;
-	color: 000000;
-}
-
-#introduction h1 {
-	margin-top: 100px;
-	font-size: 55px;
-	margin-bottom: 10px;
-}
-
-#introduction p {
-	font-size: 20px;
-}
 
 
  h1 {
@@ -179,38 +190,17 @@ footer a:hover {
 	margin-top: 15px;
 }
 /* Images */
-.images {
-	margin-top: 20px;
 
-
-}
-
-.images .box {
-
-	float: left;
-	text-align: center;
-	width: 30%;
-	padding: 10px
-}
-
-.images .box .img {
-	width: 100%;
-	height: auto;
-}
 
 
 /* Footer */
 
 
 footer {
-	padding: 1%;
+	padding: 2em 0;
 	margin-top: 20px;
 	color: #000000;
 	background-color: #f4f4f4;
-	text-align: center;
-}
-
-footer {
 	float: left;
 	padding: 20px 10px;
 	max-width: 1200px;
@@ -226,36 +216,36 @@ footer p {
 
 /* Media Queries */
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
 	header #name, 
-	header nav, 
+	header nav,
+	footer,
 	header nav li,
 	h1, {
 		float: none;
 		text-align: center;
 		width: 100%;
-
 	}
 
-	nav ul {
+	#name, footer, nav ul {
 		display: inline-block;
 		
 	}
 
 
-	nav li {
+	#name, nav ul li {
 		text-align: center;
-		width: 100%;
+		width: 50%;
 	}
 
-	.images {
-		width: 100%;
-		margin: 0;
-		border-radius: 4pz;
+	.container {
+		width: 70%;
+		max-width: 1000px;
+		margin: 0 auto;
 	}
-	.box {
-		width: 100px;
-		height: 100px;
+
+	p {
+		font-size: 100%;
 	}
 	
 	section {
@@ -265,7 +255,11 @@ footer p {
 	}
 
 	h3{
-		font-size: 140%;
+		font-size: 120%;
+	}
+
+	.wrap {
+		min-height: 100vh;
 	}
 
 	footer {
@@ -273,42 +267,12 @@ footer p {
 		margin-bottom: 15%;
 	}
 
-
 	header {
 		padding-bottom: 20px;
 	}
 
-	.introduction h1 {
-		margin-top: 40px;
-	
 
-	}
-
-@media screen and (max-width: 320px) {
-
-	body {
-		margin: 0;
-	}
-
-	h3 {
-		font-size: 150%;
-	}
-
-	p {
-		font-size: 50%;
-		margin: 2%;
-	}
-	nav a {
-		float: left;
-		width: 25%
-		padding: 20px; 1 %;
-		margin-bottom: 0;
-	}
-
-}
-
-
-@media screen and (max-width: 1024) {
+@media screen and (min-width: 1024) {
 	.container {
 		width: 900px;
 		margin: 0 auto;
@@ -325,17 +289,3 @@ footer p {
 }
 
 /* Clearfix */
-.clearfix:before,
-.clearfix:after {
-  content: " ";
-  display: table;
-}
-
-.clearfix:after {
-  clear: both;
-}
-
-.clearfix {
-  *zoom: 1;
-}
-}
